@@ -1,8 +1,29 @@
+/* Styles for all screens */
 body {
     font-family: Arial, sans-serif;
     text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
 canvas {
     border: 1px solid black;
+    display: block;
+    margin: 0 auto; /* Center the canvas horizontally */
+}
+
+button {
+    margin-top: 10px;
+}
+
+/* Media query for screens smaller than 600px (typical phones) */
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 1.5em; /* Decrease the font size of h1 for smaller screens */
+    }
+
+    canvas {
+        width: 100%; /* Make the canvas full width */
+        height: auto; /* Automatically adjust the height */
+    }
 }
