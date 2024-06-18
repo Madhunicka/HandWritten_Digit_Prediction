@@ -4,6 +4,7 @@ import numpy as np
 from PIL import Image
 import base64
 from io import BytesIO
+import os
 
 app = Flask(__name__)
 model = load_model('mnist_cnn_model.h5')
@@ -41,4 +42,5 @@ def predict():
     return jsonify({'prediction': int(digit)})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port, debug=True)
